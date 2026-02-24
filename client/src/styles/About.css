@@ -1,0 +1,31 @@
+.about {
+  background-color: var(--light-color);
+}
+
+.reason-card {
+  text-align: center;
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+}
+
+.reason-card h3 {
+  font-size: 1.3rem;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+.reason-card p {
+  color: #666;
+  line-height: 1.8;
+}

@@ -1,0 +1,43 @@
+.features {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: white;
+}
+
+.features .section-title h2,
+.features .section-title p {
+  color: white;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-size: 1.8rem;
+  transition: var(--transition);
+}
+
+.feature-item:hover .feature-icon {
+  background-color: white;
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.feature-item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  opacity: 0.9;
+  line-height: 1.6;
+}

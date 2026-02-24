@@ -1,0 +1,165 @@
+.top-bar {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Marquee style for contact info */
+.contact-marquee {
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee-scroll 15s linear infinite;
+  white-space: nowrap;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.marquee-content a {
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+}
+
+.marquee-content a:hover {
+  color: var(--secondary-color);
+}
+
+.marquee-separator {
+  margin: 0 15px;
+  opacity: 0.5;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.navbar {
+  background-color: white;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo {
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .top-bar-content {
+    flex-direction: row;
+    gap: 0;
+    text-align: left;
+  }
+  .contact-marquee {
+    width: 100%;
+    padding: 0;
+  }
+  .marquee-content {
+    font-size: 0.98rem;
+    gap: 25px;
+    animation-duration: 10s;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .nav-links {
+    position: fixed;
+    top: 115px;
+    left: -100%;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  .nav-links.active {
+    left: 0;
+  }
+}

@@ -1,0 +1,148 @@
+.page-hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: white;
+  padding: 100px 0 80px;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.page-hero p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-content-grid h2 {
+  color: var(--dark-color);
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+}
+
+.about-content-grid p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.about-image-placeholder {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 15px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.placeholder-content {
+  text-align: center;
+}
+
+.placeholder-content span {
+  font-size: 6rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.placeholder-content p {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.values-section {
+  background-color: var(--light-color);
+}
+
+.value-card {
+  text-align: center;
+}
+
+.value-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  padding: 20px;
+}
+
+.value-card h3 {
+  color: var(--dark-color);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.stats-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: white;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 30px;
+}
+
+.stat-box h3 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.stat-box p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+@media (max-width: 968px) {
+  .page-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .about-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .about-image-placeholder {
+    height: 300px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
