@@ -41,3 +41,7 @@
   opacity: 0.9;
   line-height: 1.6;
 }
+
+.section-title h2 {
+  padding-top: 20px;
+}

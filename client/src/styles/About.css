@@ -29,3 +29,8 @@
   color: #666;
   line-height: 1.8;
 }
+
+/* Remove top padding for About section-title only */
+.about .section-title h2 {
+  margin-top: 0px;
+}

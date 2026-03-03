@@ -58,6 +58,7 @@ router.post('/', async (req, res) => {
       success: false, 
       message: 'Failed to send message. Please try again later.' 
     });
+    
   }
 });
 

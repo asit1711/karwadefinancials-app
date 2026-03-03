@@ -48,8 +48,12 @@ const About = () => {
               viewport={{ once: true }}
               className="about-image-placeholder"
             >
-              <div className="placeholder-content">
-                <span>🏢</span>
+              <img 
+                src="/office.png"
+                alt="Karwade Financial Office" 
+                className="about-office-img"
+              />
+              <div className="image-overlay">
                 <p>Serving clients since 1986</p>
               </div>
             </motion.div>

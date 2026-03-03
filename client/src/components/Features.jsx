@@ -4,11 +4,11 @@ import '../styles/Features.css';
 
 const Features = () => {
   const features = [
-    {
-      icon: <FaMobileAlt />,
-      title: 'Mobile App Access',
-      description: 'Manage your policies, file claims, and get quotes anytime, anywhere with our mobile app.'
-    },
+    // {
+    //   icon: <FaMobileAlt />,
+    //   title: 'Mobile App Access',
+    //   description: 'Manage your policies, file claims, and get quotes anytime, anywhere with our mobile app.'
+    // },
     {
       icon: <FaClock />,
       title: '24/7 Support',
