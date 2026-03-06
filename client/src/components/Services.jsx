@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaHome, FaCar, FaHeartbeat, FaBriefcase, FaUmbrella, FaGraduationCap } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaHome, FaCar, FaHeartbeat, FaGraduationCap } from 'react-icons/fa';
 import '../styles/Services.css';
 
 const Services = () => {
@@ -7,32 +8,22 @@ const Services = () => {
     {
       icon: <FaHome />,
       title: 'Home Insurance',
-      description: 'Comprehensive coverage for your home and belongings. Protect your investment with flexible plans.'
+      description: 'Comprehensive coverage for your home and belongings with flexible plans for every budget.'
     },
     {
       icon: <FaCar />,
       title: 'Auto Insurance',
-      description: 'Full protection for your vehicles with competitive rates and excellent roadside assistance.'
+      description: 'Smart vehicle protection with dependable claim support and competitive premium options.'
     },
     {
       icon: <FaHeartbeat />,
       title: 'Life Insurance',
-      description: 'Secure your family\'s future with our range of life insurance products and financial planning.'
-    },
-    {
-      icon: <FaBriefcase />,
-      title: 'Business Insurance',
-      description: 'Safeguard your business with comprehensive commercial insurance solutions.'
-    },
-    {
-      icon: <FaUmbrella />,
-      title: 'Umbrella Coverage',
-      description: 'Extra liability protection beyond your standard policy limits for complete peace of mind.'
+      description: 'Secure your family with structured life cover and long-term protection planning.'
     },
     {
       icon: <FaGraduationCap />,
       title: 'Education Planning',
-      description: 'Save for your children\'s future education with our specialized investment plans.'
+      description: 'Goal-driven plans to build education funds for your children with disciplined growth.'
     }
   ];
 
@@ -40,25 +31,30 @@ const Services = () => {
     <section className="services section">
       <div className="container">
         <div className="section-title">
-          <h2>Our Services</h2>
-          <p>We provide comprehensive financial services across multiple fields to meet all your needs.</p>
+          <h2>Solutions Built Around Real Life</h2>
+          <p>Choose from core coverage and planning services that are tailored to your goals.</p>
         </div>
-        
+
         <div className="grid grid-3">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+            <motion.article
+              key={service.title}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
               viewport={{ once: true }}
               className="service-card card"
             >
               <div className="service-icon">{service.icon}</div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <a href="#quote" className="learn-more">Get Quote →</a>
-            </motion.div>
+              <Link
+                to={`/contact?subject=${encodeURIComponent(`Quote Request - ${service.title}`)}`}
+                className="learn-more"
+              >
+                Get Quote
+              </Link>
+            </motion.article>
           ))}
         </div>
       </div>

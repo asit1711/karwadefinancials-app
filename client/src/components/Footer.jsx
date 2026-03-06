@@ -34,10 +34,10 @@ const Footer = () => {
             <div className="footer-section">
               <h4>Our Services</h4>
               <ul>
-                <li><a href="#quote">Home Insurance</a></li>
-                <li><a href="#quote">Auto Insurance</a></li>
-                <li><a href="#quote">Life Insurance</a></li>
-                <li><a href="#quote">Business Insurance</a></li>
+                <li><Link to="/contact?subject=Quote%20Request%20-%20Home%20Insurance">Home Insurance</Link></li>
+                <li><Link to="/contact?subject=Quote%20Request%20-%20Auto%20Insurance">Auto Insurance</Link></li>
+                <li><Link to="/contact?subject=Quote%20Request%20-%20Life%20Insurance">Life Insurance</Link></li>
+                <li><Link to="/contact?subject=Quote%20Request%20-%20Business%20Insurance">Business Insurance</Link></li>
               </ul>
             </div>
             
@@ -50,7 +50,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <FaPhone />
-                  <a href="tel:+1234567890">+91 9822237375</a>
+                  <a href="tel:+919822237375">+91 9822237375</a>
                 </li>
                 <li>
                   <FaEnvelope />

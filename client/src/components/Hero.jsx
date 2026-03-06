@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { FaCheckCircle } from 'react-icons/fa';
 import '../styles/Hero.css';
 
 const slides = [
@@ -8,27 +9,32 @@ const slides = [
     id: 1,
     subtitle: 'Investments. Retirement. Insurance.',
     title: 'We can help you plan for that.',
-    description: 'Since 1986, Karwade Financial has been dedicated to protecting what matters most to you and your family.',
-    buttonText: 'Get Started Now',
-    buttonLink: '/contact'
+    description:
+      'Since 1986, Karwade Financial has helped families and businesses protect wealth and make confident long-term decisions.',
+    buttonText: 'Get Started',
+    buttonLink: '/contact?subject=Free%20Consultation'
   },
   {
     id: 2,
     subtitle: 'Comprehensive Financial Solutions',
-    title: 'Your Trusted Partner in Financial Security',
-    description: 'Experience personalized service with comprehensive insurance and financial solutions tailored to your needs.',
-    buttonText: 'Our Services',
+    title: 'Personalized Advice, Practical Coverage',
+    description:
+      'From policy selection to financial planning, our team gives you transparent recommendations built around your goals.',
+    buttonText: 'Explore Services',
     buttonLink: '/services'
   },
   {
     id: 3,
     subtitle: 'Protecting Your Future',
-    title: 'Secure Your Family\'s Tomorrow Today',
-    description: 'With over 40 years of experience, we provide reliable insurance and investment solutions for your peace of mind.',
-    buttonText: 'Learn More',
+    title: 'Build Financial Security With Confidence',
+    description:
+      'We combine trusted insurers, responsive service, and decades of domain knowledge to keep your plan resilient.',
+    buttonText: 'Know Our Story',
     buttonLink: '/about'
   }
 ];
+
+const heroHighlights = ['Trusted Since 1986', '50K+ Clients Served', 'Dedicated Advisors'];
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -36,7 +42,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 8000); // Change slide every 8 seconds
+    }, 7000);
 
     return () => clearInterval(timer);
   }, []);
@@ -55,41 +61,51 @@ const Hero = () => {
 
   return (
     <section className="hero">
-      <div className="hero-overlay"></div>
-      
+      <div className="hero-overlay" />
+
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.45 }}
           className="hero-slide"
         >
           <div className="container">
             <div className="hero-content">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 26 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.65, delay: 0.12 }}
                 className="hero-text"
               >
                 <p className="hero-subtitle">{slides[currentSlide].subtitle}</p>
                 <h1>{slides[currentSlide].title}</h1>
-                <p className="hero-description">
-                  {slides[currentSlide].description}
-                </p>
+                <p className="hero-description">{slides[currentSlide].description}</p>
+
+                <div className="hero-highlight-row">
+                  {heroHighlights.map((item) => (
+                    <span key={item} className="hero-highlight-pill">
+                      <FaCheckCircle /> {item}
+                    </span>
+                  ))}
+                </div>
+
                 <div className="hero-buttons">
                   <Link to={slides[currentSlide].buttonLink} className="btn btn-primary">
                     {slides[currentSlide].buttonText}
                   </Link>
+                  <a href="tel:+919822237375" className="btn btn-secondary">
+                    Speak to an Advisor
+                  </a>
                 </div>
               </motion.div>
-              
+
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.88 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.22 }}
                 className="hero-stats"
               >
                 <div className="stat-item">
@@ -110,7 +126,6 @@ const Hero = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
       <button className="carousel-arrow carousel-arrow-left" onClick={prevSlide} aria-label="Previous slide">
         ‹
       </button>
@@ -118,16 +133,19 @@ const Hero = () => {
         ›
       </button>
 
-      {/* Carousel Dots */}
       <div className="carousel-dots">
-        {slides.map((_, index) => (
+        {slides.map((slide, index) => (
           <button
-            key={index}
+            key={slide.id}
             className={`carousel-dot ${index === currentSlide ? 'active' : ''}`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </div>
+
+      <div className="hero-progress" aria-hidden="true">
+        <span style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }} />
       </div>
     </section>
   );

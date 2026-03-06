@@ -1,58 +1,58 @@
 .footer {
-  background-color: var(--dark-color);
-  color: white;
+  background: linear-gradient(165deg, #0a2f38, #12384a);
+  color: #e6edf4;
   margin-top: auto;
 }
 
 .footer-main {
-  padding: 40px 0 30px;
+  padding: 48px 0 34px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
 }
 
 .footer-section h3 {
-  color: var(--secondary-color);
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 1.45rem;
+  margin-bottom: 16px;
 }
 
 .footer-section h4 {
-  color: white;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  color: #ffd166;
+  font-size: 1.08rem;
+  margin-bottom: 14px;
 }
 
 .footer-section p {
-  line-height: 1.8;
-  opacity: 0.9;
-  margin-bottom: 20px;
+  line-height: 1.75;
+  opacity: 0.95;
+  margin-bottom: 16px;
 }
 
 .social-links {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .social-links a {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: var(--transition);
 }
 
 .social-links a:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-3px);
+  background-color: rgba(255, 209, 102, 0.22);
+  transform: translateY(-2px);
 }
 
 .footer-section ul {
@@ -60,70 +60,59 @@
 }
 
 .footer-section ul li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .footer-section ul li a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(230, 237, 244, 0.9);
   text-decoration: none;
-  transition: var(--transition);
+  transition: color var(--transition);
 }
 
 .footer-section ul li a:hover {
-  color: var(--secondary-color);
-  padding-left: 5px;
+  color: #ffd166;
 }
 
 .contact-list li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .contact-list svg {
-  color: var(--secondary-color);
-  margin-top: 3px;
+  color: #ffd166;
+  margin-top: 4px;
   flex-shrink: 0;
 }
 
 .hours {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
+  margin-top: 16px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
 }
 
 .hours strong {
-  color: var(--secondary-color);
+  color: #ffd166;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .hours p {
   margin: 0;
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 25px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 18px 0;
   text-align: center;
 }
 
 .footer-bottom p {
   margin: 0;
-  opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .footer-main {
-    padding: 40px 0 20px;
-  }
+  opacity: 0.82;
+  font-size: 0.9rem;
 }

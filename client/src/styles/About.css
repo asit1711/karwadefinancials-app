@@ -3,34 +3,33 @@
 }
 
 .reason-card {
-  text-align: center;
+  text-align: left;
 }
 
 .icon-wrapper {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  display: flex;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  border-radius: 50%;
+  background: linear-gradient(135deg, #0d5c63, #1d7874);
+  border-radius: 16px;
   color: white;
-  font-size: 2rem;
+  font-size: 1.55rem;
 }
 
 .reason-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.18rem;
   color: var(--dark-color);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .reason-card p {
-  color: #666;
-  line-height: 1.8;
+  color: var(--muted-text);
+  line-height: 1.72;
 }
 
-/* Remove top padding for About section-title only */
 .about .section-title h2 {
-  margin-top: 0px;
+  margin-top: 0;
 }

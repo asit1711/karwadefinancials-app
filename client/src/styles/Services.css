@@ -1,56 +1,78 @@
 .services {
-  background-color: white;
+  position: relative;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 92% 10%, rgba(13, 92, 99, 0.09), transparent 36%);
+  pointer-events: none;
 }
 
 .service-card {
-  text-align: center;
-  border: 2px solid transparent;
-  transition: var(--transition);
+  text-align: left;
+  border: 1px solid rgba(13, 92, 99, 0.14);
+  position: relative;
+  overflow: hidden;
 }
 
-.service-card:hover {
-  border-color: var(--secondary-color);
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0d5c63, #ffd166);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
 }
 
 .service-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 20px;
-  display: flex;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--light-color);
-  border-radius: 10px;
+  background: rgba(13, 92, 99, 0.08);
+  border: 1px solid rgba(13, 92, 99, 0.18);
+  border-radius: 16px;
   color: var(--primary-color);
-  font-size: 2rem;
-  transition: var(--transition);
+  font-size: 1.6rem;
+  transition: transform var(--transition), background-color var(--transition), color var(--transition);
 }
 
 .service-card:hover .service-icon {
-  background-color: var(--primary-color);
-  color: white;
-  transform: scale(1.1);
+  background: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px) rotate(-5deg);
 }
 
 .service-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   color: var(--dark-color);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .service-card p {
-  color: #666;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  color: var(--muted-text);
+  line-height: 1.72;
+  margin-bottom: 18px;
 }
 
 .learn-more {
   color: var(--primary-color);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  transition: var(--transition);
 }
 
 .learn-more:hover {
-  color: var(--accent-color);
+  color: #0b4f56;
 }

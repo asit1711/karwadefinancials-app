@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
 import '../styles/ContactPage.css';
 
 const Contact = () => {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,6 +17,15 @@ const Contact = () => {
   
   const [status, setStatus] = useState({ type: '', message: '' });
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const query = new URLSearchParams(location.search);
+    const presetSubject = query.get('subject');
+
+    if (presetSubject) {
+      setFormData((prev) => ({ ...prev, subject: presetSubject }));
+    }
+  }, [location.search]);
 
   const handleChange = (e) => {
     setFormData({
@@ -76,7 +87,7 @@ const Contact = () => {
                     <FaPhone />
                   </div>
                   <h3>Phone</h3>
-                  <p><a href="tel:+91 9822237375">+91 9822237375</a></p>
+                  <p><a href="tel:+919822237375">+91 9822237375</a></p>
                   <p>Monday - Friday, 9am - 6pm</p>
                 </div>
                 

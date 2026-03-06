@@ -7,19 +7,23 @@ const CTA = () => {
     <section className="cta section">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="cta-content"
         >
-          <h2>Ready to Secure Your Future?</h2>
+          <h2>Ready to Secure Your Financial Future?</h2>
           <p>
-            Get started today with a free consultation. Our experts are here to help you find the perfect insurance solution.
+            Start with a focused consultation and get a coverage plan aligned to your life stage, risks, and goals.
           </p>
           <div className="cta-buttons">
-            <Link to="/contact" className="btn btn-primary">Get Started</Link>
-            <a href="tel:+1234567890" className="btn btn-secondary">Call: +91 9822237375</a>
+            <Link to="/contact?subject=Free%20Consultation" className="btn btn-primary">
+              Get Started
+            </Link>
+            <a href="tel:+919822237375" className="btn btn-secondary">
+              Call +91 9822237375
+            </a>
           </div>
         </motion.div>
       </div>

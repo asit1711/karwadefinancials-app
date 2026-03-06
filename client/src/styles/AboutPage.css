@@ -1,80 +1,78 @@
 .page-hero {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
-  padding: 100px 0 80px;
+  padding: 82px 0 64px;
   text-align: center;
 }
 
 .page-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 14px;
   font-weight: 700;
 }
 
 .page-hero p {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
   opacity: 0.95;
 }
 
 .about-content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 44px;
   align-items: center;
 }
 
 .about-content-grid h2 {
   color: var(--dark-color);
-  font-size: 2.2rem;
-  margin-bottom: 25px;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 18px;
 }
 
 .about-content-grid p {
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  font-size: 1.05rem;
+  color: #4f6173;
+  line-height: 1.75;
+  margin-bottom: 16px;
+  font-size: 1.02rem;
 }
 
 .about-image-placeholder {
   position: relative;
-  border-radius: 15px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  aspect-ratio: 16 / 10;
-  max-height: 450px;
+  box-shadow: 0 16px 34px rgba(16, 42, 67, 0.2);
+  aspect-ratio: 4 / 3;
+  min-height: 320px;
 }
 
 .about-office-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
+  object-position: center 42%;
   display: block;
+  transition: transform 0.35s ease;
 }
 
 .about-image-placeholder:hover .about-office-img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .image-overlay {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  bottom: 0;
+  background: linear-gradient(to top, rgba(10, 40, 60, 0.88), transparent 80%);
   color: white;
-  padding: 30px 20px 20px;
+  padding: 26px 18px 16px;
   text-align: center;
 }
 
 .image-overlay p {
-  font-size: 1.3rem;
+  font-size: 1.05rem;
   font-weight: 600;
   margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .values-section {
@@ -86,28 +84,28 @@
 }
 
 .value-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 25px;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  border-radius: 50%;
+  border-radius: 14px;
   color: white;
-  font-size: 2rem;
-  padding: 20px;
+  font-size: 1.4rem;
+  padding: 12px;
 }
 
 .value-card h3 {
   color: var(--dark-color);
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
 }
 
 .value-card p {
-  color: #666;
-  line-height: 1.8;
+  color: #5d6d7f;
+  line-height: 1.7;
 }
 
 .stats-section {
@@ -117,47 +115,66 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
 }
 
 .stat-box {
   text-align: center;
-  padding: 30px;
+  padding: 20px 14px;
 }
 
 .stat-box h3 {
-  font-size: 3.5rem;
-  margin-bottom: 15px;
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  margin-bottom: 8px;
   font-weight: 700;
 }
 
 .stat-box p {
-  font-size: 1.1rem;
+  font-size: 0.96rem;
   opacity: 0.95;
 }
 
 @media (max-width: 968px) {
-  .page-hero h1 {
-    font-size: 2.2rem;
-  }
-  
   .about-content-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 26px;
   }
-  
+
   .about-image-placeholder {
-    height: 300px;
-  }
-  
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    min-height: 280px;
+    aspect-ratio: 16 / 11;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 66px 0 54px;
+  }
+
+  .about-image-placeholder {
+    min-height: 240px;
+    border-radius: 14px;
+  }
+
+  .about-office-img {
+    object-position: center 35%;
+  }
+
+  .image-overlay p {
+    font-size: 0.95rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat-box {
+    padding: 14px 8px;
+  }
+}
+
+@media (max-width: 420px) {
   .stats-grid {
     grid-template-columns: 1fr;
   }

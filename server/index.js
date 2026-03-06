@@ -14,10 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 const contactRoutes = require('./routes/contact');
-const quoteRoutes = require('./routes/quote');
 
 app.use('/api/contact', contactRoutes);
-app.use('/api/quote', quoteRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

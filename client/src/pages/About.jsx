@@ -49,7 +49,7 @@ const About = () => {
               className="about-image-placeholder"
             >
               <img 
-                src="/office.png"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
                 alt="Karwade Financial Office" 
                 className="about-office-img"
               />
